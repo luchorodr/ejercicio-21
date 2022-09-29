@@ -6,4 +6,6 @@ adminRouter.get("/", pagesController.showAdmin);
 
 adminRouter.get("/crear", pagesController.showCrear);
 
+adminRouter.get("/modificar/:id", pagesController.showModificar);
+
 module.exports = adminRouter;

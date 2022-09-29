@@ -13,6 +13,10 @@ async function showCrear(req, res) {
   res.render("crearArticulo");
 }
 
+async function showModificar(req, res) {
+  res.render("modificarArticulo");
+}
+
 // Otros handlers...
 // ...
 
@@ -20,4 +24,5 @@ module.exports = {
   showHome,
   showAdmin,
   showCrear,
+  showModificar,
 };
