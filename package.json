@@ -21,5 +21,13 @@
   "description": "Hack Academy - Ejemplo de MVC y Sequelize",
   "devDependencies": {
     "@faker-js/faker": "^6.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanmaDiez/ejercicio-21.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JuanmaDiez/ejercicio-21/issues"
+  },
+  "homepage": "https://github.com/JuanmaDiez/ejercicio-21#readme"
 }
