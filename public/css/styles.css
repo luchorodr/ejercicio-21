@@ -1,7 +1,6 @@
 /* Colocar aquí CSS "propio" */
-
+@import "footer.css";
 /* Código de css página Juanma */
-
 .adminHeader {
   background-color: black;
   color: white;
@@ -11,20 +10,4 @@
   border: solid 1px;
   border-radius: 2px;
   background-color: #eaeaea;
-}
-
-#footer {
-  margin-top: 15px;
-  border-top: 1px rgb(98, 98, 98) solid;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#footer .logos a {
-  margin-right: 8px;
-  color: black;
-  font-size: 2rem;
 }
