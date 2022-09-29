@@ -22,3 +22,8 @@
   align-items: center;
   justify-content: center;
 }
+
+#footer .logos a {
+  color: black;
+  font-size: 2rem;
+}
