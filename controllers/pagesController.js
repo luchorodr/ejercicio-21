@@ -5,13 +5,14 @@ async function showHome(req, res) {
   res.render("home", { articles });
 }
 
-async function showAdmin(req, res) {
+function showAdmin(req, res) {
   res.render("admin");
 }
 
-async function showAboutUs(req, res) {
-  res.render("aboutUs");
+function showCrear(req, res) {
+  res.render("crearArticulo")
 }
+
 
 // Otros handlers...
 // ...
@@ -19,5 +20,5 @@ async function showAboutUs(req, res) {
 module.exports = {
   showHome,
   showAdmin,
-  showAboutUs,
+  showCrear,
 };
