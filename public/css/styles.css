@@ -27,8 +27,9 @@
 }
 
 .crearArticulo {
-    border: solid  4px;
+    border: solid  1px;
     border-radius: 2px;
+    background-color: #eaeaea;
 }
 
 

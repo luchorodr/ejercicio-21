@@ -9,8 +9,8 @@ async function showAdmin(req, res) {
   res.render("admin");
 }
 
-async function showAboutUs(req, res) {
-  res.render("aboutUs");
+async function showCrear(req, res) {
+  res.render("crearArticulo");
 }
 
 // Otros handlers...
@@ -19,5 +19,5 @@ async function showAboutUs(req, res) {
 module.exports = {
   showHome,
   showAdmin,
-  showAboutUs,
+  showCrear,
 };
