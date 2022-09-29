@@ -1,5 +1,36 @@
 /* Colocar aquí CSS "propio" */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Código de css página Juanma */
+
 .adminHeader {
     background-color: black;
     color: white;
 }
+
+.crearArticulo {
+    border: solid  4px;
+    border-radius: 2px;
+}
+
+
+
+
