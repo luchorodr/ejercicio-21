@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>Admin</title>
   </head>
   <body>
-    <h1>Admin page</h1>
+    <div class="d-flex justify-content-center adminHeader">
+      <h4>Hack the Blog</h4>
+    </div>
+    <span class="d-flex justify-content-between m-4">
+      <p>Listado de titulos</p>
+      <div>
+        <span
+          ><a href="/admin/modificar/:id" class="btn btn-primary">Modificar</a>
+          <a href="/admin/eliminar" class="btn btn-danger">Eliminar</a></span
+        >
+      </div>
+    </span>
+
+    <p class="m-4">Crear un articulo: <a href="/admin/crear" class="btn btn-success">Aqui</a></p>
   </body>
 </html>
