@@ -8,6 +8,22 @@
 
 
     <style> 
+
+  #seccionMedia{
+
+  background: #F5F5F5;
+  }
+
+    .divArticuloHome{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+
     .tituloArticulo {
       width: 493px;
       font-family: 'Open Sans';
@@ -19,7 +35,7 @@
     color: #000000;
     }
     .fechaArticulo {
-
+      
       width: 493px;
       font-family: 'Lora';
       font-style: italic;
@@ -30,14 +46,18 @@
 
     }
 
-    
-    
+    .divisor {
+    width: 875px;
+    height: 0px;
+    border: 1px solid #DEE2E6;
+    }
     </style>
     <title>Home</title>
   </head>
   <body>
+    <%- include("partials/navbar") %>
     <%- include("partials/header") %>
-    <section id="SeccionMedia">
+    <section id="seccionMedia">
       <div class="container">
         
           <div class="divArticuloHome">
@@ -46,10 +66,8 @@
               Maxime, fugiat eligendi. Animi velit, porro maiores eligendi labore cupiditate.
             </h4>
             <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
-            <hr />
+            <hr class="divisor"/>
           </div>
-
-  
 
           <div class="divArticuloHome">
             <h4 class="tituloArticulo">
@@ -57,10 +75,8 @@
               Maxime, fugiat eligendi. Animi velit, porro maiores eligendi labore cupiditate.
             </h4>
             <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
-            <hr />
+            <hr  class="divisor"/>
           </div>
-
-         
 
           <div class="divArticuloHome">
             <h4 class="tituloArticulo">
@@ -68,7 +84,7 @@
               Maxime, fugiat eligendi. Animi velit, porro maiores eligendi labore cupiditate.
             </h4>
             <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
-            <hr />
+            <hr  class="divisor"/>
           </div>
           
           <div class="divArticuloHome">
@@ -84,6 +100,7 @@
       </div>
     </section>
 
-    <%- include("partials/footer") %> <%- include("partials/scripts") %>
+    <%- include("partials/footer") %> 
+    <%- include("partials/scripts") %>
   </body>
 </html>
