@@ -27,8 +27,7 @@
             class="form-control"
             id="crearTitulo"
             name="crearTitulo"
-            placeholder="Ingresar título..."
-            value=""
+            value="<%= article.title %>"
           />
         </div>
         <div class="mb-3">
@@ -38,7 +37,7 @@
             id="crearContenido"
             rows="3"
             name="crearContenido"
-            value=""
+            value="<%= article.content %>"
           ></textarea>
         </div>
         <button type="submit" class="btn btn-success">Modificar</button>
