@@ -8,4 +8,6 @@ adminRouter.get("/crear", pagesController.showCrear);
 
 adminRouter.get("/modificar/:id", pagesController.showModificar);
 
+adminRouter.post("/modificar/:id", pagesController.submitModificar);
+
 module.exports = adminRouter;
