@@ -20,6 +20,7 @@ const Article = require("./Article")(sequelize, Model, DataTypes);
 User.hasMany(Article);
 Article.belongsTo(User);
 Article.hasMany(Comment);
+Comment.belongsTo(Article);
 Comment.belongsTo(User);
 
 module.exports = {

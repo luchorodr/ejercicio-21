@@ -1,4 +1,4 @@
-const { Article } = require("../models");
+const { Article, User, Comment } = require("../models");
 
 async function showHome(req, res) {
   const articles = await Article.findAll({ include: "user" });
@@ -20,9 +20,19 @@ async function showModificar(req, res) {
 }
 
 async function showArticulo(req, res) {
-  const article = await Article.findByPk(req.params.id, { include: "user" });
-  console.log(article);
-  res.render("articulo", { article });
+  const article = await Article.findByPk(req.params.id, {
+    include: [
+      {
+        model: User,
+      },
+      {
+        model: Comment,
+        include: [User],
+      },
+    ],
+  });
+  const comments = article.comments;
+  res.render("articulo", { article, comments });
 }
 
 // Otros handlers...

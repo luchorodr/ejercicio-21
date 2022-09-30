@@ -26,7 +26,15 @@
           day:'numeric'})%>
         </small>
       </span>
-      <p>Comentarios aca</p>
+
+      <% for (let comment of comments) {%>
+      <div class="d-flex mt-4">
+        <small class="mr-2">
+          Autor: <%= comment.user.firstname %> <%= comment.user.lastname %>
+        </small>
+        <p><%= comment.content %></p>
+      </div>
+      <% } %>
     </div>
     <% include("partials/footer") %>
   </body>
