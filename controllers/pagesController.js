@@ -19,14 +19,6 @@ async function showModificar(req, res) {
   res.render("modificarArticulo", { article });
 }
 
-async function submitModificar(req, res) {
-  const article = await Article.update(
-    { title: req.body.crearTitulo, contnt: req.body.crearContenido },
-    { where: { id: req.params.id } },
-  );
-  res.redirect("/admin");
-}
-
 // Otros handlers...
 // ...
 
@@ -35,5 +27,4 @@ module.exports = {
   showAdmin,
   showCrear,
   showModificar,
-  submitModificar,
 };
