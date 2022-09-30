@@ -8,7 +8,7 @@
 
     <style>
       #seccionMedia {
-        height: 60vh;
+        padding: 50px;
         background: #f5f5f5;
         display: flex;
         align-items: center;
@@ -50,36 +50,17 @@
     <%- include("partials/navbar") %> <%- include("partials/header") %>
     <section id="seccionMedia">
       <div class="container">
+
+        <% for (let article of articles) { %>
         <div class="divArticuloHome">
           <h4 class="tituloArticulo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fugit!
+            <%= article.title %>
           </h4>
           <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
           <hr class="divisor" />
         </div>
-
-        <div class="divArticuloHome">
-          <h4 class="tituloArticulo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fugit!
-          </h4>
-          <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
-          <hr class="divisor" />
-        </div>
-
-        <div class="divArticuloHome">
-          <h4 class="tituloArticulo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fugit!
-          </h4>
-          <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
-          <hr class="divisor" />
-        </div>
-
-        <div class="divArticuloHome">
-          <h4 class="tituloArticulo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fugit!
-          </h4>
-          <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
-        </div>
+        <% } %> 
+        
       </div>
     </section>
 
