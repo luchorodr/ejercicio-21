@@ -10,4 +10,6 @@ adminRouter.get("/modificar/:id", pagesController.showModificar);
 
 adminRouter.post("/modificar/:id", pagesController.submitModificar);
 
+adminRouter.get("/eliminar/:id", pagesController.submitModificar);
+
 module.exports = adminRouter;

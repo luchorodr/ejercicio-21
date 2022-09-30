@@ -21,12 +21,17 @@ async function showModificar(req, res) {
 
 async function submitModificar(req, res) {
   const article = await Article.update(
-    { title: req.body.crearTitulo, contnt: req.body.crearContenido },
+    { title: req.body.crearTitulo, content: req.body.crearContenido },
     { where: { id: req.params.id } },
   );
   res.redirect("/admin");
 }
 
+async function Delete(req, res) {
+  const article = await Article.destroy({ where: { id: req.params.id } });
+  console.log(req.params.id);
+  res.redirect("/admin");
+}
 // Otros handlers...
 // ...
 
@@ -36,4 +41,5 @@ module.exports = {
   showCrear,
   showModificar,
   submitModificar,
+  Delete,
 };
