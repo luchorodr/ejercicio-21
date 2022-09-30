@@ -18,34 +18,36 @@
     <div class="d-flex justify-content-center container mt-4 p-4">
       <h5>Modificar el articulo</h5>
     </div>
-    <form method="post" action="/admin/modificar/<%= article.id%>">
-      <div class="container mt-4 crearArticulo">
-        <div class="container p-4">
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="modificarTitulo"
-              name="modificarTitulo"
-              value="<%- article.title %>"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Contenido</label>
-            <textarea
-              class="form-control"
-              id="modificarContenido"
-              rows="3"
-              name="modificarContenido"
-            >
+    <div class="container">
+      <form method="post" action="/admin/modificar/<%= article.id%>">
+        <div class="container mt-4 crearArticulo">
+          <div class="container p-4">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="modificarTitulo"
+                name="modificarTitulo"
+                value="<%- article.title %>"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Contenido</label>
+              <textarea
+                class="form-control"
+                id="modificarContenido"
+                rows="3"
+                name="modificarContenido"
+              >
 <%- article.content %></textarea
-            >
+              >
+            </div>
+            <button type="submit" class="btn btn-success">Modificar</button>
           </div>
-          <button type="submit" class="btn btn-success">Modificar</button>
         </div>
-      </div>
-    </form>
-    <a class="back" href="/admin"> <i class="fa-solid fa-left-long"></i> Volver </a>
+      </form>
+      <a class="back" href="/admin"> <i class="fa-solid fa-left-long"></i> Volver </a>
+    </div>
   </body>
 </html>
