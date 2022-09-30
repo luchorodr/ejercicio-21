@@ -17,16 +17,39 @@
     <div class="d-flex justify-content-center adminHeader">
       <h4>Hack the Blog</h4>
     </div>
-    <span class="d-flex justify-content-between m-4">
-      <p>Listado de titulos</p>
-      <div>
-        <span
-          ><a href="/admin/modificar/:id" class="btn btn-primary">Modificar</a>
-          <a href="/admin/eliminar" class="btn btn-danger">Eliminar</a></span
-        >
-      </div>
-    </span>
 
-    <p class="m-4">Crear un articulo: <a href="/admin/crear" class="btn btn-success">Aqui</a></p>
+    <div class="container d-flex mt-3" id="adminCrearLink">
+      <p class="m-4">Crear un articulo: <a href="/admin/crear" class="btn btn-success">Aqui</a></p>
+    </div>
+
+    <table class="container d-flex justify-content-center mt-4" id="adminTable">
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Acciones</th>
+      </tr>
+      <% for (let article of articles) { %>
+      <tr id="articulo<%= article.id %>">
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td>
+          <span
+            ><a href="/admin/modificar/<%= article.id%> " class="btn btn-primary">Modificar</a>
+            <a href="/admin/eliminar/<%= article.id%> " class="btn btn-danger">Eliminar</a></span
+          >
+        </td>
+      </tr>
+      <% } %>
+    </table>
+    <style>
+      #adminTable tr th {
+        border: 1px solid black;
+        background-color: #eaeaea;
+      }
+      #adminTable tr td {
+        border: 1px solid black;
+        background-color: #eaeaea;
+      }
+    </style>
   </body>
 </html>
