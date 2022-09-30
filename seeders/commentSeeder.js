@@ -9,9 +9,17 @@ module.exports = async () => {
   for (let i = 0; i < 15; i++) {
     comments.push({
       content: faker.lorem.paragraphs(),
+      userId: faker.datatype.number({
+        min: 1,
+        max: 3,
+      }),
+      articleId: faker.datatype.number({
+        min: 1,
+        max: 5,
+      }),
     });
   }
 
   await Comment.bulkCreate(comments);
-  console.log("[Database] Se corrió el seeder de comments.");
+  console.log("[Database] Se corrió el seeder de Comments.");
 };
