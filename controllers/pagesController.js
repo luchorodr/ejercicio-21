@@ -27,5 +27,4 @@ module.exports = {
   showAdmin,
   showCrear,
   showModificar,
-  submitModificar,
 };
