@@ -12,8 +12,10 @@ module.exports = async () => {
       content: faker.lorem.paragraphs(),
      userId : faker.datatype.number({
       min: 1,
-      max: 15,}),
-    });
+      max: 3,}),
+    }
+
+    );
   }
 
   await Article.bulkCreate(articles);
