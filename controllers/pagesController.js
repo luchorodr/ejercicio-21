@@ -15,7 +15,7 @@ async function showCrear(req, res) {
 }
 
 async function showModificar(req, res) {
-  const article = await Article.findByPk(req.params.id);
+  const article = await Article.findByPk(req.params.id, { include: "user" });
   res.render("modificarArticulo", { article });
 }
 
