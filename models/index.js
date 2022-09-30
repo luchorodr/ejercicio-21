@@ -17,6 +17,7 @@ const Article = require("./Article")(sequelize, Model, DataTypes);
 
 // Luego de definir los modelos, se pueden establecer relaciones
 // entre los mismos...
+User.hasMany(Article)
 
 module.exports = {
   sequelize,

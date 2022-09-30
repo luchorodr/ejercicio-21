@@ -10,6 +10,9 @@ module.exports = async () => {
     articles.push({
       title: faker.lorem.sentence(5),
       content: faker.lorem.paragraphs(),
+     userId : faker.datatype.number({
+      min: 1,
+      max: 15,}),
     });
   }
 
