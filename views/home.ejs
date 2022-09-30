@@ -51,12 +51,14 @@
     <section id="seccionMedia">
       <div class="container">
 
-        <% for (let article of articles) { %>
+        <% for (let article of articles.reverse()) { %>
+          
+          <% console.log((article.createdAt.toLocaleDateString('es-UY'))) %>
         <div class="divArticuloHome">
           <h4 class="tituloArticulo">
             <%= article.title %>
           </h4>
-          <small class="fechaArticulo">Creado por pepito el 24 de septiembre de 2022</small>
+          <small class="fechaArticulo">Creado por pepito el <%=article.createdAt.toLocaleDateString('es-ES',{year: 'numeric', month: 'long', day: 'numeric'}) %></small>
           <hr class="divisor" />
         </div>
         <% } %> 
