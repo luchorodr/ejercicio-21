@@ -16,7 +16,7 @@
   <body>
     <%- include("./partials/navbar-admin") %>
     <div class="d-flex justify-content-center container mt-4 p-4">
-      <h5>Modificar el articulo</h5>
+      <h5>Modificar el articulo : "<%- article.title %> "</h5>
     </div>
     <div class="container">
       <form method="post" action="/admin/modificar/<%= article.id%>">
