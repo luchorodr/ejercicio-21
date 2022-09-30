@@ -25,7 +25,10 @@ async function edit(req, res) {
 async function update(req, res) {}
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+async function eliminar(req, res) {
+  const article = await Article.destroy({ where: { id: req.params.id } });
+  res.redirect("/admin");
+}
 
 // Otros handlers...
 // ...
@@ -37,5 +40,5 @@ module.exports = {
   store,
   edit,
   update,
-  destroy,
+  eliminar,
 };
