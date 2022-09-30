@@ -28,7 +28,7 @@
         <th>Titulo</th>
         <th>Acciones</th>
       </tr>
-      <% for (let article of articles) { %>
+      <% for (let article of articles.reverse()) { %>
       <tr id="articulo<%= article.id %>">
         <td><%= article.id %></td>
         <td><%= article.title %></td>
