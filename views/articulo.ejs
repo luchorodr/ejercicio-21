@@ -20,7 +20,7 @@
       <h4 class="d-flex justify-content-center"><%= article.title %></h4>
       <p class="d-flex justify-content-center"><%= article.content %></p>
       <span class="d-flex justify-content-between">
-        <small>Autor</small>
+        <small>Autor: <%= article.user.firstname %> <%= article.user.lastname %></small>
         <small>
           <%=article.createdAt.toLocaleDateString('es-ES',{year: 'numeric', month: 'long',
           day:'numeric'})%>

@@ -1,4 +1,4 @@
-const { Article } = require("../models");
+const { Article, User } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {}
@@ -12,6 +12,11 @@ async function create(req, res) {}
 // Store a newly created resource in storage.
 async function store(req, res) {
   await Article.create({ title: req.body.crearTitulo, content: req.body.crearContenido });
+  await User.create({
+    firstname: req.body.crearNombre,
+    lastname: req.body.crearApellido,
+    email: req.body.crearEmail,
+  });
   res.redirect("admin");
 }
 

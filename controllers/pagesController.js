@@ -1,7 +1,7 @@
 const { Article } = require("../models");
 
 async function showHome(req, res) {
-  const articles = await Article.findAll({include:"user"});
+  const articles = await Article.findAll({ include: "user" });
   res.render("home", { articles });
 }
 
@@ -20,7 +20,8 @@ async function showModificar(req, res) {
 }
 
 async function showArticulo(req, res) {
-  const article = await Article.findByPk(req.params.id);
+  const article = await Article.findByPk(req.params.id, { include: "user" });
+  console.log(article);
   res.render("articulo", { article });
 }
 
