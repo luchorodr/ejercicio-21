@@ -18,15 +18,15 @@
       <h5>Publicar un nuevo articulo</h5>
     </div>
 
-    <div class="container mt-4 crearArticulo">
+    <form action="/admin" class="container mt-4 crearArticulo" method="post">
       <div class="container p-4">
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Titulo</label>
           <input
             type="text"
             class="form-control"
-            id="modificarTitulo"
-            name="modificarTitulo"
+            id="crearTitulo"
+            name="crearTitulo"
             placeholder="Ingresar título..."
           />
         </div>
@@ -34,14 +34,14 @@
           <label for="exampleFormControlTextarea1" class="form-label">Contenido</label>
           <textarea
             class="form-control"
-            id="modificarContenido"
+            id="crearContenido"
             rows="3"
-            name="modificarContenido"
+            name="crearContenido"
             placeholder="Ingresar texto..."
           ></textarea>
         </div>
         <button type="submit" class="btn btn-success">Crear</button>
       </div>
-    </div>
+    </form>
   </body>
 </html>

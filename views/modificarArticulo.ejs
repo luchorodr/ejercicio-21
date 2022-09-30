@@ -25,14 +25,19 @@
             <input
               type="text"
               class="form-control"
-              id="crearTitulo"
-              name="crearTitulo"
+              id="modificarTitulo"
+              name="modificarTitulo"
               value="<%- article.title %>"
             />
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Contenido</label>
-            <textarea class="form-control" id="crearContenido" rows="3" name="crearContenido">
+            <textarea
+              class="form-control"
+              id="modificarContenido"
+              rows="3"
+              name="modificarContenido"
+            >
               <%- article.content %></textarea
             >
           </div>
