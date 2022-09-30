@@ -42,7 +42,10 @@
               >
 <%- article.content %></textarea
               >
-              <label for=""> Creado por <%- article.user.firstname %> </label>
+              <br />
+              <label for="">
+                Creado por <%- article.user.firstname %> <%- article.user.lastname %>
+              </label>
             </div>
             <button type="submit" class="btn btn-success">Modificar</button>
           </div>
