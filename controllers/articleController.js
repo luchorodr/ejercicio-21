@@ -1,4 +1,4 @@
-const { Article, User } = require("../models");
+const { Article, User, Comment } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {}
@@ -43,6 +43,10 @@ async function eliminar(req, res) {
   res.redirect("/admin");
 }
 
+async function eliminarComentario(req, res) {
+  await Comment.destroy({ where: { id: req.params.id } });
+  res.redirect("/");
+}
 // Otros handlers...
 // ...
 
@@ -54,4 +58,5 @@ module.exports = {
   edit,
   update,
   eliminar,
+  eliminarComentario,
 };

@@ -33,6 +33,7 @@
           Autor: <%= comment.user.firstname %> <%= comment.user.lastname %>
         </small>
         <p><%= comment.content %></p>
+        <a href="/eliminar/<%= comment.id %>">X</a>
       </div>
       <% } %>
     </div>
