@@ -13,8 +13,10 @@ async function comentar(req, res) {
 }
 
 async function eliminarComentario(req, res) {
+  const comment = await Comment.findOne({ where: { id: req.params.id } });
+
   await Comment.destroy({ where: { id: req.params.id } });
-  res.redirect("/");
+  res.redirect(`/articulo/${comment.articleId}`);
 }
 
 module.exports = {
