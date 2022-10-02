@@ -35,6 +35,11 @@ async function showArticulo(req, res) {
   res.render("articulo", { article, comments });
 }
 
+async function showComentar(req, res) {
+  const article = await Article.findByPk(req.params.id);
+  res.render("addComment", { article });
+}
+
 // Otros handlers...
 // ...
 
@@ -44,4 +49,5 @@ module.exports = {
   showCrear,
   showModificar,
   showArticulo,
+  showComentar
 };

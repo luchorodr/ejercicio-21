@@ -11,11 +11,7 @@ async function create(req, res) {}
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const newUser = await User.create({
-    firstname: req.body.crearNombre,
-    lastname: req.body.crearApellido,
-    email: req.body.crearEmail,
-  });
+  const newUser = await User.findOne({ where: { email: `${req.body.crearEmail}` } });
   await Article.create({
     title: req.body.crearTitulo,
     content: req.body.crearContenido,
@@ -43,10 +39,6 @@ async function eliminar(req, res) {
   res.redirect("/admin");
 }
 
-async function eliminarComentario(req, res) {
-  await Comment.destroy({ where: { id: req.params.id } });
-  res.redirect("/");
-}
 // Otros handlers...
 // ...
 
@@ -58,5 +50,4 @@ module.exports = {
   edit,
   update,
   eliminar,
-  eliminarComentario,
 };
