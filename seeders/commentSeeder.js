@@ -15,7 +15,7 @@ module.exports = async () => {
       }),
       articleId: faker.datatype.number({
         min: 1,
-        max: 5,
+        max: 15,
       }),
     });
   }
