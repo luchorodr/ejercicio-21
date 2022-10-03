@@ -40,6 +40,10 @@ async function showComentar(req, res) {
   res.render("addComment", { article });
 }
 
+async function showArticles(req, res) {
+  const articles = await Article.findAll();
+  res.json(articles);
+}
 // Otros handlers...
 // ...
 
@@ -49,5 +53,6 @@ module.exports = {
   showCrear,
   showModificar,
   showArticulo,
-  showComentar
+  showComentar,
+  showArticles,
 };

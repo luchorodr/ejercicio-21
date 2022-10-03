@@ -14,4 +14,6 @@ publicRouter.get("/comentar/:id", pagesController.showComentar);
 
 publicRouter.post("/articulo/:id", [userController.create, commentController.comentar]);
 
+publicRouter.get("/api/articulos", pagesController.showArticles)
+
 module.exports = publicRouter;
