@@ -27,6 +27,51 @@
         </small>
       </span>
 
+      <form action="/articulo/<%= article.id %>" method="post">
+        <div class="container p-4">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ingresarNombre"
+              name="ingresarNombre"
+              placeholder="Ingresar nombre..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ingresarApellido"
+              name="ingresarApellido"
+              placeholder="Ingresar apellido..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="ingresarEmail"
+              name="ingresarEmail"
+              placeholder="Ingresar e-mail..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Comentario</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ingresarComentario"
+              name="ingresarComentario"
+              placeholder="Ingresar título..."
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Comentar</button>
+        </div>
+      </form>
       <% for (let comment of comments) {%>
       <div class="d-flex mt-4">
         <small class="mr-2">
