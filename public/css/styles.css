@@ -11,3 +11,14 @@
   border-radius: 2px;
   background-color: #eaeaea;
 }
+
+.autor {
+  width: 60%;
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: #76757d;
+  text-align: left;
+}
