@@ -14,28 +14,28 @@ async function create(req, res) {}
 async function store(req, res) {
   const form = formidable({
     multiples: true,
-    uploadDir: __dirname + "/public/img/uploads",
+    uploadDir: __dirname + "/../public/img/uploads",
     keepExtensions: true,
   });
 
   form.parse(req, async (err, fields, files) => {
     console.log(files);
     console.log(fields);
-    // let user = await User.findOne({ where: { email: fields.ingresarEmail } });
-    // if (!user) {
-    //   user = await User.create({
-    //     firstname: fields.ingresarNombre,
-    //     lastname: fields.ingresarApellido,
-    //     email: fields.ingresarEmail,
-    //   });
-    // }
+    let user = await User.findOne({ where: { email: fields.ingresarEmail } });
+    if (!user) {
+      user = await User.create({
+        firstname: fields.ingresarNombre,
+        lastname: fields.ingresarApellido,
+        email: fields.ingresarEmail,
+      });
+    }
 
-    // await Article.create({
-    //   title: fields.crearTitulo,
-    //   content: fields.crearContenido,
-    //   userId: user.id,
-    //   // img: files.imagen.newFilename,
-    // });
+    await Article.create({
+      title: fields.crearTitulo,
+      content: fields.crearContenido,
+      userId: user.id,
+      // img: files.imagen.newFilename,
+    });
 
     res.redirect("admin");
   });
