@@ -11,11 +11,19 @@ async function create(req, res) {}
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const newUser = await User.findOne({ where: { email: `${req.body.crearEmail}` } });
+  const user = await User.findOne({ where: { email: `${req.body.ingresarEmail}` } });
+  if (!user) {
+    await User.create({
+      firstname: req.body.ingresarNombre,
+      lastname: req.body.ingresarApellido,
+      email: req.body.ingresarEmail,
+    });
+  }
+
   await Article.create({
     title: req.body.crearTitulo,
     content: req.body.crearContenido,
-    userId: newUser.id,
+    userId: user.id,
   });
 
   res.redirect("admin");

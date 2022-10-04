@@ -10,7 +10,7 @@ publicRouter.get("/articulo/:id", pagesController.showArticulo);
 
 publicRouter.get("/eliminar/:id", commentController.eliminarComentario);
 
-publicRouter.post("/articulo/:id", [userController.create, commentController.comentar]);
+publicRouter.post("/articulo/:id", commentController.comentar);
 
 publicRouter.get("/api/articulos", pagesController.showArticles);
 
