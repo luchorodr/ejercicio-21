@@ -12,7 +12,7 @@ adminRouter.get("/modificar/:id", pagesController.showModificar);
 
 adminRouter.post("/modificar/:id", articleController.edit);
 
-adminRouter.get("/eliminar/:id", articleController.eliminar);
+adminRouter.get("/eliminar/:id", articleController.destroy);
 
 adminRouter.post("/",  articleController.store);
 

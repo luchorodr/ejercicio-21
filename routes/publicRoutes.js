@@ -8,9 +8,9 @@ publicRouter.get("/", pagesController.showHome);
 
 publicRouter.get("/articulo/:id", pagesController.showArticulo);
 
-publicRouter.get("/eliminar/:id", commentController.eliminarComentario);
+publicRouter.get("/eliminar/:id", commentController.destroy);
 
-publicRouter.post("/articulo/:id", commentController.comentar);
+publicRouter.post("/articulo/:id", commentController.store);
 
 publicRouter.get("/api/articulos", pagesController.showArticles);
 

@@ -11,9 +11,9 @@ async function create(req, res) {}
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const user = await User.findOne({ where: { email: `${req.body.ingresarEmail}` } });
+  let user = await User.findOne({ where: { email: `${req.body.ingresarEmail}` } });
   if (!user) {
-    await User.create({
+    user = await User.create({
       firstname: req.body.ingresarNombre,
       lastname: req.body.ingresarApellido,
       email: req.body.ingresarEmail,
@@ -42,7 +42,7 @@ async function edit(req, res) {
 async function update(req, res) {}
 
 // Remove the specified resource from storage.
-async function eliminar(req, res) {
+async function destroy(req, res) {
   const article = await Article.destroy({ where: { id: req.params.id } });
   res.redirect("/admin");
 }
@@ -57,5 +57,5 @@ module.exports = {
   store,
   edit,
   update,
-  eliminar,
+  destroy,
 };
