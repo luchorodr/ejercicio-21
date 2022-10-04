@@ -22,3 +22,9 @@
   color: #76757d;
   text-align: left;
 }
+
+.conteidoArticulo {
+  /* text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; */
+}

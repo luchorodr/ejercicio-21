@@ -18,66 +18,79 @@
     <div class="d-flex justify-content-center container mt-4 p-4">
       <h5>Publicar un nuevo articulo</h5>
     </div>
-<div class="container">
-    <form action="/admin" class="container mt-4 crearArticulo" method="post">
-      <div class="container p-4">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-          <input
-            type="text"
-            class="form-control"
-            id="ingresarNombre"
-            name="ingresarNombre"
-            placeholder="Ingresar nombre..."
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-          <input
-            type="text"
-            class="form-control"
-            id="ingresarApellido"
-            name="ingresarApellido"
-            placeholder="Ingresar apellido..."
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-          <input
-            type="email"
-            class="form-control"
-            id="ingresarEmail"
-            name="ingresarEmail"
-            placeholder="Ingresar e-mail..."
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-          <input
-            type="text"
-            class="form-control"
-            id="crearTitulo"
-            name="crearTitulo"
-            placeholder="Ingresar título..."
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Contenido</label>
-          <textarea
-            class="form-control"
-            id="crearContenido"
-            rows="3"
-            name="crearContenido"
-            placeholder="Ingresar texto..."
-          ></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Crear</button>
-      </div>
-    </form>
-     <button class="btn btn-link">
-        <a class="back" href="/admin">
-          <i class="fa-solid fa-left-long"></i> Volver
-        </a>
-      </div>
+    <div class="container">
+      <!-- <form
+        action="/admin"
+        class=" mt-4 crearArticulo"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class=" p-4">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ingresarNombre"
+              name="ingresarNombre"
+              placeholder="Ingresar nombre..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ingresarApellido"
+              name="ingresarApellido"
+              placeholder="Ingresar apellido..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="ingresarEmail"
+              name="ingresarEmail"
+              placeholder="Ingresar e-mail..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="crearTitulo"
+              name="crearTitulo"
+              placeholder="Ingresar título..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Contenido</label>
+            <textarea
+              class="form-control"
+              id="crearContenido"
+              rows="3"
+              name="crearContenido"
+              placeholder="Ingresar texto..."
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Seleccionar una imagen</label>
+            <input class="form-control" id="image" rows="3" name="image" type="file" />
+          </div>
+          <button type="submit" class="btn btn-success">Crear</button>
+        </div> -->
+      <!-- </form> -->
+      <form action="/admin" method="post" enctype="multipart/form-data">
+        <input type="text" name="ingresarNombre" />
+        <input type="text" name="ingresarApellido" />
+        <input type="file" name="imagen" />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <a class="back btn btn-link" href="/admin"> <i class="fa-solid fa-left-long"></i> Volver </a>
+    </div>
   </body>
 </html>

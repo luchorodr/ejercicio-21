@@ -14,11 +14,14 @@ module.exports = (sequelize, Model, DataTypes) => {
       content: {
         type: DataTypes.TEXT,
       },
+      img: {
+        type: DataTypes.STRING,
+      },
     },
     {
       sequelize,
       modelName: "article",
-    }
+    },
   );
 
   return Article;

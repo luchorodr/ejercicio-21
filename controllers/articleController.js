@@ -1,4 +1,5 @@
 const { Article, User, Comment } = require("../models");
+const formidable = require("formidable");
 
 // Display a listing of the resource.
 async function index(req, res) {}
@@ -11,22 +12,33 @@ async function create(req, res) {}
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  let user = await User.findOne({ where: { email: `${req.body.ingresarEmail}` } });
-  if (!user) {
-    user = await User.create({
-      firstname: req.body.ingresarNombre,
-      lastname: req.body.ingresarApellido,
-      email: req.body.ingresarEmail,
-    });
-  }
-
-  await Article.create({
-    title: req.body.crearTitulo,
-    content: req.body.crearContenido,
-    userId: user.id,
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/public/img/uploads",
+    keepExtensions: true,
   });
 
-  res.redirect("admin");
+  form.parse(req, async (err, fields, files) => {
+    console.log(files);
+    console.log(fields);
+    // let user = await User.findOne({ where: { email: fields.ingresarEmail } });
+    // if (!user) {
+    //   user = await User.create({
+    //     firstname: fields.ingresarNombre,
+    //     lastname: fields.ingresarApellido,
+    //     email: fields.ingresarEmail,
+    //   });
+    // }
+
+    // await Article.create({
+    //   title: fields.crearTitulo,
+    //   content: fields.crearContenido,
+    //   userId: user.id,
+    //   // img: files.imagen.newFilename,
+    // });
+
+    res.redirect("admin");
+  });
 }
 
 // Show the form for editing the specified resource.

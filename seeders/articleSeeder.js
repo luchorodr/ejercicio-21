@@ -10,12 +10,12 @@ module.exports = async () => {
     articles.push({
       title: faker.lorem.sentence(5),
       content: faker.lorem.paragraphs(),
-     userId : faker.datatype.number({
-      min: 1,
-      max: 3,}),
-    }
-
-    );
+      userId: faker.datatype.number({
+        min: 1,
+        max: 3,
+      }),
+      img: "/img/uploads/seeder-img.jpg",
+    });
   }
 
   await Article.bulkCreate(articles);
