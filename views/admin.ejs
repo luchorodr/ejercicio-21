@@ -33,7 +33,10 @@
         <td><%= article.id %></td>
         <td><%= article.title %></td>
         <td class="conteidoArticulo"><%= article.content %></td>
-        <td><img src="<%= article.img %>" alt="foto del articulo" class="img-fluid" /></td>
+        <td>
+          <!-- cambio en el src de article.img , a /img/uploads/article.img -->
+          <img src="/img/uploads/<%= article.img %>" alt="foto del articulo" class="img-fluid" />
+        </td>
         <td>
           <span
             ><a href="/admin/modificar/<%= article.id%> " class="btn btn-primary">Modificar</a>

@@ -34,7 +34,7 @@ async function store(req, res) {
       title: fields.crearTitulo,
       content: fields.crearContenido,
       userId: user.id,
-      // img: files.imagen.newFilename,
+      img: files.image.newFilename,
     });
 
     res.redirect("admin");
