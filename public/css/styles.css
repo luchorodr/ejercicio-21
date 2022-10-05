@@ -23,8 +23,16 @@
   text-align: left;
 }
 
- /*.conteidoArticulo {
-   text-overflow: ellipsis;
+ .contenidoArticulo { 
+ 
+  text-overflow: ellipsis;
+  word-wrap: break-word;
   overflow: hidden;
-  white-space: nowrap; 
-}*/
+  max-height: 3.6em;
+  line-height: 1.8em;
+
+}
+
+.img-articulo{
+  max-height: 350px;
+}

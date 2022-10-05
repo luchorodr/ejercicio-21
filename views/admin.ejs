@@ -32,10 +32,10 @@
       <tr id="articulo<%= article.id %>">
         <td><%= article.id %></td>
         <td><%= article.title %></td>
-        <td class="conteidoArticulo"><%= article.content %></td>
+        <td> <p class="contenidoArticulo"><%= article.content %></p></td>
         <td>
           <!-- cambio en el src de article.img , a /img/uploads/article.img -->
-          <img src="/img/uploads/<%= article.img %>" alt="foto del articulo" class="img-fluid" />
+          <img class="img-fluid img-articulo" src="/img/uploads/<%= article.img %>" alt="foto del articulo"  />
         </td>
         <td>
           <span
