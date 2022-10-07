@@ -10,9 +10,9 @@ module.exports = async () => {
     users.push({
       firstname: faker.name.firstName(),
       lastname: faker.name.lastName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      password: "1234",
     });
-    
   }
 
   await User.bulkCreate(users);

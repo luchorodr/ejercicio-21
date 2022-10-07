@@ -3,10 +3,8 @@ const formidable = require("formidable");
 
 // Display a listing of the resource.
 async function index(req, res) {}
-
 // Display the specified resource.
 async function show(req, res) {}
-
 // Show the form for creating a new resource
 async function create(req, res) {}
 
@@ -37,7 +35,7 @@ async function store(req, res) {
       img: files.image.newFilename,
     });
 
-    res.redirect("admin");
+    res.redirect("/admin");
   });
 }
 

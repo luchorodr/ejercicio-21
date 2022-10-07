@@ -17,7 +17,9 @@
     <%- include("./partials/navbar-admin") %>
 
     <div class="m-3" id="adminCrearLink">
-      <p class="m-4">Crear un articulo: <a href="/admin/crear" class="btn btn-success">Aqui</a></p>
+      <p class="m-4">
+        Crear un articulo: <a href="/admin/articles/create" class="btn btn-success">Aqui</a>
+      </p>
     </div>
 
     <table class="container d-flex justify-content-center mt-4" id="adminTable">
@@ -32,15 +34,21 @@
       <tr id="articulo<%= article.id %>">
         <td><%= article.id %></td>
         <td><%= article.title %></td>
-        <td> <p class="contenidoArticulo"><%= article.content %></p></td>
+        <td><p class="contenidoArticulo"><%= article.content %></p></td>
         <td>
           <!-- cambio en el src de article.img , a /img/uploads/article.img -->
-          <img class="img-fluid img-articulo" src="/img/uploads/<%= article.img %>" alt="foto del articulo"  />
+          <img
+            class="img-fluid img-articulo"
+            src="/img/uploads/<%= article.img %>"
+            alt="foto del articulo"
+          />
         </td>
         <td>
           <span
-            ><a href="/admin/modificar/<%= article.id%> " class="btn btn-primary">Modificar</a>
-            <a href="/admin/eliminar/<%- article.id%> " class="btn btn-danger">Eliminar</a></span
+            ><a href="/admin/articles/<%= article.id%>/edit" class="btn btn-primary">Modificar</a>
+            <a href="/admin/articles/<%- article.id%>/delete" class="btn btn-danger"
+              >Eliminar</a
+            ></span
           >
         </td>
       </tr>

@@ -5,6 +5,42 @@ async function showHome(req, res) {
   res.render("home", { articles });
 }
 
+function showLogin(req, res) {
+  res.render("login");
+}
+
+function showRegister(req, res) {
+  res.render("register");
+}
+
+async function postRegister(req, res) {
+  const passwordParaHashear = req.body.password;
+  const passwordHasheado = await bcrypt.hash(passwordParaHashear, 10);
+  const [user, created] = await User.findOrCreate({
+    where: { email: req.body.email },
+    defaults: {
+      firstname: req.body.firstName,
+      lastname: req.body.lastName,
+      email: req.body.email,
+      password: passwordHasheado,
+    },
+  });
+  if (created) {
+    req.login(user, () => res.redirect("/admin"));
+  } else {
+    res.redirect("back");
+  }
+}
+
+function logOut(req, res, next) {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+}
+
 async function showAdmin(req, res) {
   const articles = await Article.findAll();
   res.render("admin", { articles });
@@ -55,4 +91,8 @@ module.exports = {
   showArticulo,
   showComentar,
   showArticles,
+  showLogin,
+  showRegister,
+  postRegister,
+  logOut,
 };
