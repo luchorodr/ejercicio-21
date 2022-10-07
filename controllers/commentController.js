@@ -12,17 +12,15 @@ async function store(req, res) {
 
   await Comment.create({
     content: req.body.ingresarComentario,
-    articleId: req.params.id,
+    articleId: req.params.articleId,
     userId: user.id,
   });
-  res.redirect(`/articulo/${req.params.id}`);
+  res.redirect(`/articles/${req.params.articleId}`);
 }
 
 async function destroy(req, res) {
-  const comment = await Comment.findOne({ where: { id: req.params.id } });
-
-  await Comment.destroy({ where: { id: req.params.id } });
-  res.redirect(`/articulo/${comment.articleId}`);
+  await Comment.destroy({ where: { id: req.params.commentId } });
+  res.redirect(`/articles/${req.params.articleId}`);
 }
 
 module.exports = {

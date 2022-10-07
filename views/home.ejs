@@ -15,9 +15,9 @@
         margin-bottom: 0;
       }
       .divArticuloHome {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .tituloArticulo {
         width: 60%;
@@ -29,7 +29,6 @@
         text-align: left;
         text-decoration: none;
         color: black;
-
       }
       .fechaArticulo {
         width: 60%;
@@ -54,18 +53,18 @@
     <%- include("partials/navbar") %> <%- include("partials/header") %>
     <section id="seccionMedia">
       <div class="container">
-
         <% for (let article of articles.reverse()) { %>
-      
+
         <div class="divArticuloHome">
-          <a href="/articulo/<%-article.id%> " class="tituloArticulo">
-            <%= article.title %>
-          </a>
-          <small class="fechaArticulo">Creado por <%= article.user.firstname + " " + article.user.lastname  %>  el <%=article.createdAt.toLocaleDateString('es-ES',{year: 'numeric', month: 'long', day: 'numeric'}) %></small>
+          <a href="/articles/<%-article.id%> " class="tituloArticulo"> <%= article.title %> </a>
+          <small class="fechaArticulo"
+            >Creado por <%= article.user.firstname + " " + article.user.lastname %> el
+            <%=article.createdAt.toLocaleDateString('es-ES',{year: 'numeric', month: 'long', day:
+            'numeric'}) %></small
+          >
           <hr class="divisor" />
         </div>
-        <% } %> 
-        
+        <% } %>
       </div>
     </section>
 

@@ -11,8 +11,8 @@
   <body>
     <%- include("partials/navbar") %> <%- include("partials/header") %>
     <div class=" d-flex justify-content-between ">
-      <a href="/articulo/<%- article.id%15 - 1 %>" type="button">Anterior</a>
-      <a href="/articulo/<%- article.id%15+1 %>" type="button">Siguiente</a>
+      <a href="/articles/<%- article.id%15 - 1 %>" type="button">Anterior</a>
+      <a href="/articles/<%- article.id%15+1 %>" type="button">Siguiente</a>
     </div>
     
     <div class="container p-4" id="contenedorArticulo">
@@ -26,7 +26,7 @@
         </small>
       </span>
       <div class="container">
-        <form action="/articulo/<%= article.id %>" method="post">
+        <form action="/articles/<%= article.id %>/comments" method="post">
           
             <div class="mb-3">
               <h4>Comentar</h4>
@@ -82,7 +82,7 @@
             Autor: <%= comment.user.firstname %> <%= comment.user.lastname %>
           </small>
           <p><%= comment.content %></p>
-          <a href="/eliminar/<%= comment.id %>">Eliminar comentario</a>
+          <a href="/admin/articles/<%= article.id %>/comments/<%= comment.id %>/delete">Eliminar comentario</a>
         </div>
         <% } %>
         <div class="d-flex mt-4 justify-content-between">
