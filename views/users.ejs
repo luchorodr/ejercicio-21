@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar") %>
+
+    <table class="container d-flex justify-content-center mt-4" id="adminTable">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>email</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+      <% for (let user of users) { %>
+      <tr id="usuario<%= user.id %>">
+        <td><%= user.id %></td>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.email %></td>
+        <% if (user.role === 1) { %>
+        <td><%- "Lector" %></td>
+        <% } else if (user.role ===2) { %>
+        <td class="tdst-group-item"><%- "Escritor" %></td>
+        <% } else if (user.role ===3) { %>
+        <td class="tdst-group-item"><%- "Editor" %></td>
+        <% } else { %>
+        <td class="tdst-group-item"><%- "Administrador" %></td>
+        <% } %>
+        <td>
+          <span>
+            <a href="/admin/user/<%= user.id%>/edit">Modificar</a>
+            <a href="/admin/user/<%- user.id%>/delete">Eliminar</a>
+          </span>
+        </td>
+        <% } %>
+      </tr>
+    </table>
+    <style>
+      #adminTable tr th {
+        border: 1px solid black;
+        background-color: #eaeaea;
+        padding: 4px;
+      }
+      #adminTable tr td {
+        border: 1px solid black;
+        background-color: #eaeaea;
+        padding: 4px;
+      }
+    </style>
+  </body>
+</html>

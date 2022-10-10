@@ -23,16 +23,31 @@
   text-align: left;
 }
 
- .contenidoArticulo { 
- 
+.contenidoArticulo {
   text-overflow: ellipsis;
   word-wrap: break-word;
   overflow: hidden;
   max-height: 3.6em;
   line-height: 1.8em;
-
 }
 
-.img-articulo{
+.img-articulo {
   max-height: 350px;
+}
+
+#navbar {
+  background-color: black;
+  padding: 5px;
+}
+
+#navbar h5 {
+  color: aliceblue;
+}
+.navbarTitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  color: white;
 }

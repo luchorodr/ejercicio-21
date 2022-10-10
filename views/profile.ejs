@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include("partials/stylesheets") %>
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar") %>
+
+    <div class="card" style="width: 18rem" class="m-5">
+      <img src="/img/uploads/<%- user.img %> " class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Nombre: <%- user.firstname + " " + user.lastname %></h5>
+
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <% if (user.role === 1) { %>
+        <li class="list-group-item">Role: <%- "Lector" %></li>
+        <% } else if (user.role ===2) { %>
+        <li class="list-group-item">Role: <%- "Escritor" %></li>
+        <% } else if (user.role ===3) { %>
+        <li class="list-group-item">Role:<%- "Editor" %></li>
+        <% } else { %>
+        <li class="list-group-item">Role: <%- "Administrador" %></li>
+        <% } %>
+
+        <li class="list-group-item">Age:</li>
+        <li class="list-group-item">Hobbies:</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Eliminar</a>
+        <a href="#" class="card-link">Modificar</a>
+      </div>
+    </div>
+  </body>
+</html>

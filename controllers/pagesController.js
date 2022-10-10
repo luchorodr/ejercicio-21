@@ -1,4 +1,6 @@
+const { request } = require("express");
 const { Article, User, Comment } = require("../models");
+const bcrypt = require("bcrypt");
 
 async function showHome(req, res) {
   const articles = await Article.findAll({ include: "user" });
@@ -23,6 +25,7 @@ async function postRegister(req, res) {
       lastname: req.body.lastName,
       email: req.body.email,
       password: passwordHasheado,
+      role: req.body.role,
     },
   });
   if (created) {

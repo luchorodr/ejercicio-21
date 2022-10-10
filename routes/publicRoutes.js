@@ -3,10 +3,11 @@ const passport = require("passport");
 const publicRouter = express.Router();
 const pagesController = require("../controllers/pagesController");
 const commentController = require("../controllers/commentController");
+const redirectIfAuthenticated = require("../middlewares/redirectIfAuthenticated");
 
 publicRouter.get("/", pagesController.showHome);
 
-publicRouter.get("/login", pagesController.showLogin);
+publicRouter.get("/login", redirectIfAuthenticated, pagesController.showLogin);
 
 publicRouter.post(
   "/login",
@@ -16,14 +17,15 @@ publicRouter.post(
   }),
 );
 
-publicRouter.get("/register", pagesController.showRegister);
+publicRouter.get("/register", redirectIfAuthenticated, pagesController.showRegister);
+
 publicRouter.post("/register", pagesController.postRegister);
 
 publicRouter.get("/logout", pagesController.logOut);
 
 publicRouter.get("/articles/:id", pagesController.showArticulo);
 
-publicRouter.post("/articles/:articleId/comments", commentController.store);
+publicRouter.post("/articles/:articleId/comments", commentController.create);
 
 publicRouter.get("/api/articulos", pagesController.showArticles);
 

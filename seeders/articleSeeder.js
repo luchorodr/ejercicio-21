@@ -11,7 +11,7 @@ module.exports = async () => {
       title: faker.lorem.sentence(5),
       content: faker.lorem.paragraphs(),
       userId: faker.datatype.number({
-        min: 1,
+        min: 2,
         max: 3,
       }),
       // Cambio aqui de img: "/img/uploads/seeder-img.jpg" //

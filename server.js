@@ -34,7 +34,7 @@ passport.use(
     // let user;
     // try {
     const user = await User.findOne({ where: { email: username } });
-    console.log(user.email);
+
     // } catch (error) {
     //   // 2. Hubo algun error al hacerlo? Retornemos ese error
     //   return done(error);
