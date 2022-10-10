@@ -11,7 +11,7 @@ module.exports = async () => {
     lastname: "lector",
     email: "lector@prueba",
     password: "1234",
-    role: 1,
+    roleId: 1,
     img: "userseeder.jpg",
   });
 
@@ -20,7 +20,7 @@ module.exports = async () => {
     lastname: "escritor",
     email: "escritor@prueba",
     password: "1234",
-    role: 2,
+    roleId: 2,
     img: "userseeder.jpg",
   });
   users.push({
@@ -28,7 +28,7 @@ module.exports = async () => {
     lastname: "editor",
     email: "editor@prueba",
     password: "1234",
-    role: 3,
+    roleId: 3,
     img: "userseeder.jpg",
   });
   users.push({
@@ -36,7 +36,7 @@ module.exports = async () => {
     lastname: "Admin",
     email: "admin@prueba",
     password: "1234",
-    role: 4,
+    roleId: 4,
     img: "userseeder.jpg",
   });
 
@@ -46,7 +46,7 @@ module.exports = async () => {
       lastname: faker.name.lastName(),
       email: faker.internet.email(),
       password: "1234",
-      role: faker.datatype.number({ min: 1, max: 4 }),
+      roleId: faker.datatype.number({ min: 1, max: 4 }),
       img: "img/userseeder.jpg",
     });
   }

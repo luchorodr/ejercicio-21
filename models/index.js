@@ -1,5 +1,4 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
-const role = require("./Role");
 
 const sequelize = new Sequelize(
   process.env.DB_DATABASE, // Ej: hack_academy_db
@@ -18,13 +17,12 @@ const Article = require("./Article")(sequelize, Model, DataTypes);
 const Role = require("./Role")(sequelize, Model, DataTypes);
 // Luego de definir los modelos, se pueden establecer relaciones
 // entre los mismos...
+Role.hasMany(User);
 User.hasMany(Article);
 Article.belongsTo(User);
 Article.hasMany(Comment);
 Comment.belongsTo(Article);
 Comment.belongsTo(User);
-Role.hasMany(User);
-Role.belongsTo(User);
 
 module.exports = {
   sequelize,
