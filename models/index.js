@@ -24,6 +24,7 @@ Article.hasMany(Comment);
 Comment.belongsTo(Article);
 Comment.belongsTo(User);
 Role.hasMany(User);
+Role.belongsTo(User);
 
 module.exports = {
   sequelize,

@@ -1,6 +1,5 @@
 const { request } = require("express");
 const { Article, User, Comment } = require("../models");
-const bcrypt = require("bcrypt");
 
 async function showHome(req, res) {
   const articles = await Article.findAll({ include: "user" });
@@ -16,15 +15,13 @@ function showRegister(req, res) {
 }
 
 async function postRegister(req, res) {
-  const passwordParaHashear = req.body.password;
-  const passwordHasheado = await bcrypt.hash(passwordParaHashear, 10);
   const [user, created] = await User.findOrCreate({
     where: { email: req.body.email },
     defaults: {
       firstname: req.body.firstName,
       lastname: req.body.lastName,
       email: req.body.email,
-      password: passwordHasheado,
+      password: req.body.password,
       role: req.body.role,
     },
   });
