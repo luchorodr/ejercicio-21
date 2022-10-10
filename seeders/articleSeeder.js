@@ -12,7 +12,7 @@ module.exports = async () => {
       content: faker.lorem.paragraphs(),
       userId: faker.datatype.number({
         min: 2,
-        max: 3,
+        max: 10,
       }),
       // Cambio aqui de img: "/img/uploads/seeder-img.jpg" //
       img: "seeder-img.jpg",
