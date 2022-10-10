@@ -1,4 +1,5 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
+const role = require("./Role");
 
 const sequelize = new Sequelize(
   process.env.DB_DATABASE, // Ej: hack_academy_db
@@ -22,7 +23,7 @@ Article.belongsTo(User);
 Article.hasMany(Comment);
 Comment.belongsTo(Article);
 Comment.belongsTo(User);
-Role.belongsTo(User);
+Role.hasMany(User);
 
 module.exports = {
   sequelize,

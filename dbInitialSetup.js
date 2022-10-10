@@ -9,6 +9,7 @@ module.exports = async () => {
   await require("./seeders/userSeeder")();
   await require("./seeders/articleSeeder")();
   await require("./seeders/commentSeeder")();
+  await require("./seeders/roleSeeder")();
 
   console.log("[Database] ¡Los datos de prueba fueron insertados!");
 };

@@ -9,7 +9,7 @@ module.exports = (sequelize, Model, DataTypes) => {
         autoIncrement: true,
       },
       name: { type: DataTypes.STRING },
-      code: { type: DataTypes.BIGINT },
+      accesLevel: { type: DataTypes.BIGINT },
     },
     {
       sequelize,

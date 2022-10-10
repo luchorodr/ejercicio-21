@@ -8,6 +8,7 @@ const LocalStrategy = require("passport-local");
 const dbInitialSetup = require("./dbInitialSetup");
 const { User } = require("./models/index");
 const bcrypt = require("bcryptjs");
+const Role = require("./models");
 
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
@@ -56,14 +57,15 @@ passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-passport.deserializeUser(function (id, done) {
-  User.findByPk(id)
-    .then((user) => {
-      done(null, user); //req.user
-    })
-    .catch(() => {
-      done(error, user);
-    });
+passport.deserializeUser(async function (id, done) {
+  try {
+    const user = await User.findByPk(id, { include: [{ model: Role }] });
+
+    done(null, user);
+  } catch (error) {
+    console.log(error);
+    done(error);
+  }
 });
 
 dbInitialSetup(); // Crea tablas e inserta datos de prueba.
