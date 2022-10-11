@@ -13,9 +13,9 @@ router.get("/api/articles", async function index(req, res) {
 
 router.get("/api/articles/search", async function showSearch(req, res) {
   console.log(req.query);
-  let articles = await Article.findAll({ where: req.query });
+  let searchResult = await Article.findAll({ where: req.query });
 
-  res.json({ articles });
+  res.json({ searchResult });
 });
 
 router.post(
