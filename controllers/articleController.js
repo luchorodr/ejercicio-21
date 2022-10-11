@@ -17,8 +17,6 @@ async function store(req, res) {
   });
 
   form.parse(req, async (err, fields, files) => {
-    console.log(files);
-    console.log(fields);
     let user = await User.findOne({ where: { email: fields.ingresarEmail } });
     if (!user) {
       user = await User.create({

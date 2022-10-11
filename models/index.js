@@ -18,6 +18,7 @@ const Role = require("./Role")(sequelize, Model, DataTypes);
 // Luego de definir los modelos, se pueden establecer relaciones
 // entre los mismos...
 Role.hasMany(User);
+User.belongsTo(Role);
 User.hasMany(Article);
 Article.belongsTo(User);
 Article.hasMany(Comment);

@@ -17,7 +17,7 @@
     <%- include("./partials/navbar") %>
 
     <div class="m-3" id="adminCrearLink">
-      <% if(user.role !== 1 ){ %>
+      <% if(user.role.accesLevel > 10 ){ %>
       <p class="m-4">
         Crear un articulo: <a href="/admin/articles/create" class="btn btn-success">New</a>
       </p>
@@ -47,9 +47,9 @@
         </td>
         <td>
           <span>
-            <% if(user.id === article.userId || user.role >2){ %>
+            <% if(user.id === article.userId || user.role.accesLevel >20){ %>
             <a href="/admin/articles/<%= article.id%>/edit" class="btn btn-primary">Modificar</a>
-            <% } %> <% if(user.id === article.userId || user.role >3){ %>
+            <% } %> <% if(user.id === article.userId || user.role.accesLevel >30){ %>
             <a href="/admin/articles/<%- article.id%>/delete" class="btn btn-danger">Eliminar</a>
             <% } %>
           </span>

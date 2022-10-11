@@ -8,7 +8,7 @@ module.exports = async () => {
 
   roles.push({
     name: "READER",
-    accesLevel: 20,
+    accesLevel: 10,
     userId: faker.datatype.number({
       min: 1,
       max: 15,
@@ -17,7 +17,7 @@ module.exports = async () => {
 
   roles.push({
     name: "WRITER",
-    accesLevel: 30,
+    accesLevel: 20,
     userId: faker.datatype.number({
       min: 1,
       max: 15,
@@ -25,7 +25,7 @@ module.exports = async () => {
   }),
     roles.push({
       name: "EDITOR",
-      accesLevel: 10,
+      accesLevel: 30,
       userId: faker.datatype.number({
         min: 1,
         max: 15,

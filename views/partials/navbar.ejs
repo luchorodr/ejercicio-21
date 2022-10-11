@@ -3,22 +3,22 @@
     <h4 class="navbarTitle"><a href="/">Hack de blog</a></h4>
     <% if (user) { %>
     <div>
-      <% if (user.role > 3) { %>
+      <% if (user.role.accesLevel > 30) { %>
       <h5 id="userlogin" class="d-inline me-3">
         Admin: <a href="/users/profile/<%- user.id %> "><%- user.firstname%></a>
       </h5>
       <a href="/admin" id="button" class="btn btn-primary">Admin</a>
       <a href="/admin/users" id="button" class="btn btn-success">Users</a>
-      <% } %> <% if (user.role === 1) { %>
+      <% } %> <% if (user.role.accesLevel === 10) { %>
       <h5 id="userlogin" class="d-inline me-3">
         Lector: <a href="/users/profile/<%- user.id %> "><%- user.firstname %></a>
       </h5>
-      <% } else if (user.role ===2) { %>
+      <% } else if (user.role.accesLevel ===20) { %>
       <h5 id="userlogin" class="d-inline me-3">
         Escritor:
         <a href="/users/profile/<%- user.id %> "><%- user.firstname %></a>
       </h5>
-      <% } else if (user.role ===3){ %>
+      <% } else if (user.role.accesLevel ===30){ %>
       <h5 id="userlogin" class="d-inline me-3">
         Editor: <a href="/users/profile/<%- user.id %> "><%- user.firstname%></a>
       </h5>
